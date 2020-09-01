@@ -1,0 +1,17 @@
+<% include ./template/header.ejs %>
+<div class="container">
+    <h2>저런! 문제가 발생했죠?</h2>
+    <hr />
+    <h3><%= message %>!</h3>
+    <% if (error.status != undefined) { %>
+        <hr />
+        <h3>DEATH CAM!</h3>
+        <h5>Cause By: <%= error.status %></h5>
+        <h5>Stack Trace</h5>
+        <pre><%= error.stack %></pre>
+    <% } else { %>
+        <hr />
+        <h3>현재의 실행 환경으로는 DEATH CAM을 확인할 수 없습니다.</h3>
+    <% } %>
+</div>
+<% include ./template/footer.ejs %>
